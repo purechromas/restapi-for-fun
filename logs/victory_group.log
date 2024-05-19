@@ -1,0 +1,26 @@
+2024-05-19 00:09:53,039 INFO lifespan: [APP INFO] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 00:10:11,976 INFO lifespan: [APP] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 00:10:23,594 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 00:15:52,087 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 00:15:57,757 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$Zh6nw/4arF1MV67gbr1.bOff37FRH04GRuX0AgjRfSZTGS6IYLZ/i'
+2024-05-19 00:20:10,351 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 00:21:11,590 ERROR api_utils: Unauthorized Token error. eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJfZW1haWxAZXhhbXBsZS5jb20iLCJleHAiOjE3MTYwNjg2NDksImp0aSI6Ijg1YjgxZGJjLTAzODAtNDZhMi04NzM2LTY5M2Q0Y2MwYzk3OCIsInJlZnJlc2hfdG9rZW4iOnRydWV9.MP4tnZ_oOIHH0KxogL0yPqY1hZ2lyAqRFbOyRnjNY9I
+2024-05-19 00:21:28,603 ERROR dependencies: ProjectAlreadyExist: project_name
+2024-05-19 00:21:29,709 ERROR dependencies: ProjectAlreadyExist: project_name
+2024-05-19 00:21:41,021 ERROR dependencies: ProjectAlreadyExist: project_name
+2024-05-19 00:21:47,520 ERROR dependencies: ProjectAlreadyExist: projezzct_name
+2024-05-19 10:04:52,185 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 10:14:07,508 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 10:14:12,860 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$ZjYlDNvH6s6/kkqrRJonTOb6PjlfuAMOKltL0KocCPzzCVUZ6dIRi'
+2024-05-19 10:15:38,136 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 10:16:59,946 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 10:17:01,869 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$qMvYqMRWr2FoFjonekfNQecUaiCXrNB1Pyux00M69brf86q89/FWq'
+2024-05-19 10:17:25,366 ERROR dependencies: User not exist: email: your_emzail@example.com password:y0ur_password
+2024-05-19 10:18:51,833 ERROR dependencies: ProjectAlreadyExist: Victory Group
+2024-05-19 12:55:49,386 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 12:59:06,819 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 13:19:01,120 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 13:19:24,666 ERROR dependencies: ProjectAlreadyExist: asd
+2024-05-19 13:27:27,329 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 13:27:44,502 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$6z/TEuM8wPfOjEH.HfK1/ejpqtg80R8uS2XSb8EWJQLMVnEbQ/eDS'
+2024-05-19 13:28:19,755 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$.dwCD1PgcZ6CyRmRLGEBcemHsYy4LSCp2Te1WIh3zzMZ5qc5ym./y'
