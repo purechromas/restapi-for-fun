@@ -10,7 +10,6 @@ def init_app() -> FastAPI:
     fast_api = FastAPI(
         title="Group Victory Test RestAPI",
         docs_url="/",
-        debug=settings.DEBUG,
         lifespan=lifespan,
     )
     fast_api.include_router(auth_routers)
@@ -19,5 +18,9 @@ def init_app() -> FastAPI:
 
 
 if __name__ == "__main__":
-    app = init_app()
-    uvicorn.run(app=app, host=settings.APP_HOST, port=settings.APP_PORT)
+    uvicorn.run(
+        "run:init_app",
+        host=settings.APP_HOST,
+        port=settings.APP_PORT,
+        reload=settings.DEBUG
+    )

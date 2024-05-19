@@ -24,3 +24,12 @@
 2024-05-19 13:27:27,329 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
 2024-05-19 13:27:44,502 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$6z/TEuM8wPfOjEH.HfK1/ejpqtg80R8uS2XSb8EWJQLMVnEbQ/eDS'
 2024-05-19 13:28:19,755 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$.dwCD1PgcZ6CyRmRLGEBcemHsYy4LSCp2Te1WIh3zzMZ5qc5ym./y'
+2024-05-19 15:06:34,899 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:06:44,798 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:06:54,900 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:07:31,943 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:07:52,306 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$Y3vDJ1F1jWjaWDVYzLazMuClcRGHILLnHVHlDJSZclIiJNcpYw6Ri'
+2024-05-19 15:13:02,457 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:13:24,238 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:14:45,279 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
+2024-05-19 15:14:56,109 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$PvcLyECR5e6ZWTwfMrCMl.qdBJ2zZEpkMNzsW1gtfz29SMC.mX4Fa'

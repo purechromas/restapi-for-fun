@@ -47,9 +47,9 @@ class UserLoginOut(BaseModel):
     refresh_token: str
 
 
-class GetNewTokenIn(BaseModel):
+class GetAccessTokenIn(BaseModel):
     refresh_token: str
 
 
-class GetNewTokenOut(UserLoginOut):
-    pass
+class GetAccessTokenOut(BaseModel):
+    access_token: str

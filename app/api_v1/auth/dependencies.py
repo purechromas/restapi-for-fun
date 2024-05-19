@@ -5,7 +5,7 @@ from fastapi import HTTPException, status
 from app.cache.cache_tokens import set_access_token_cache
 from app.api_v1.auth.schemas import (
     UserLoginOut,
-    GetNewTokenOut,
+    GetAccessTokenOut,
     UserRegistrationOut
 )
 from app.api_v1.auth.utils import (
@@ -96,7 +96,7 @@ async def process_login_request(request_data: dict) -> UserLoginOut:
     )
 
 
-async def process_get_new_token_request(request_data: dict) -> GetNewTokenOut:
+async def process_access_token_request(request_data: dict) -> GetAccessTokenOut:
     """
     Обрабатывает запрос на обновление токена доступа.
 
@@ -104,7 +104,7 @@ async def process_get_new_token_request(request_data: dict) -> GetNewTokenOut:
     - request_data (dict): Данные запроса на обновление токена.
 
     Возвращает:
-    - GetNewTokenOut: Ответ с новыми токенами доступа.
+    - GetAccessTokenOut: Ответ с новыми токенами доступа.
 
     Исключения:
     - HTTPException: Если токен обновления недействителен или пользователь
@@ -123,7 +123,6 @@ async def process_get_new_token_request(request_data: dict) -> GetNewTokenOut:
         )
 
     access_token = create_access_token(user.email)
-    refresh_token = create_refresh_token(user.email)
 
     await set_access_token_cache(
         access_token,
@@ -131,7 +130,6 @@ async def process_get_new_token_request(request_data: dict) -> GetNewTokenOut:
         expire_minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES
     )
 
-    return GetNewTokenOut(
-        access_token=access_token,
-        refresh_token=refresh_token
+    return GetAccessTokenOut(
+        access_token=access_token
     )

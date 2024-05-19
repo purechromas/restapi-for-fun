@@ -5,14 +5,14 @@ from fastapi import APIRouter, Body, status
 from app.api_v1.auth.dependencies import (
     process_registration_request,
     process_login_request,
-    process_get_new_token_request
+    process_access_token_request
 )
 from app.api_v1.auth.schemas import (
     UserRegistrationIn,
     UserLoginIn,
     UserLoginOut,
-    GetNewTokenIn,
-    GetNewTokenOut,
+    GetAccessTokenIn,
+    GetAccessTokenOut,
     UserRegistrationOut,
 )
 
@@ -29,6 +29,6 @@ async def login(body_data: Annotated[UserLoginIn, Body()]) -> UserLoginOut:
     return await process_login_request(body_data.dict())
 
 
-@auth_routers.post("/get_new_tokens/", status_code=status.HTTP_200_OK)
-async def get_new_tokens(body_data: Annotated[GetNewTokenIn, Body()]) -> GetNewTokenOut:
-    return await process_get_new_token_request(body_data.dict())
+@auth_routers.post("/get_access_token/", status_code=status.HTTP_200_OK)
+async def get_access_token(body_data: Annotated[GetAccessTokenIn, Body()]) -> GetAccessTokenOut:
+    return await process_access_token_request(body_data.dict())
