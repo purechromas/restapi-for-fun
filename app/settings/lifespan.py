@@ -22,5 +22,7 @@ async def lifespan(app: FastAPI):
     await add_system_roles()
     await add_tables_permissions_names()
     config_logger(settings.APP_NAME)
-    log.info("[APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn")
+    log.info("Application started and it was properly configuration")
     yield
+    log.info("Postgres engine was disposed correctly")
+    await pg_helper.dispose_engine()
