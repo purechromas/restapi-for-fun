@@ -36,17 +36,24 @@
 ## Запуск приложения
 
 1. Установите Python 3.10, Docker и Docker Compose, а также Poetry.
-2. Запустите приложение с помощью команды:
-   ```docker-compose -f docker-compose.yml up -d```
+2. Запустите инфраструктура с помощью команды:
+   ```docker-compose -f docker-compose-infra.yml up -d```
 3. Установите настройку Poetry для использования виртуального окружения в проекте:
    ```poetry config virtualenvs.in-project true```
 4. Активируйте виртуальное окружение:
    ```poetry shell```
 5. Установите зависимости проекта:
    ```poetry install```
-6. Запустите приложение:
-   ```app/run.py```
-7. Перейдите по адресу:
+6. Запустите приложение через команду или через файл:
+    ```
+   # КОМАНДУ
+   - python3 setup.py develop
+   - restapi
+   
+   # ФАЙЛ
+   - app/run.py
+    ```
+7.  Перейдите по адресу:
 [http://localhost:8000/](http://localhost:8000/)
 
 ## Схема база данных
