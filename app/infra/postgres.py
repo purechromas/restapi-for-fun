@@ -10,7 +10,6 @@ from app.settings.config_app import settings
 
 class PGHelper:
     """Класс для управления подключением к базе данных Postgresql."""
-
     def __init__(self, url: str, echo: bool = False, pool_size: int = 10,
                  pool_timeout: int = 30, max_overflow: int = 10):
 
@@ -23,7 +22,7 @@ class PGHelper:
             autocommit=False, expire_on_commit=False)
 
     async def session_getter(self) -> AsyncGenerator[AsyncSession, None]:
-        """Создает и возвращает асинхронную сессию sqlalchemy."""
+        """Создает и возвращает асинхронную сессию Sqlalchemy."""
         async with self._session_factory() as session:
             yield session
 
@@ -33,6 +32,7 @@ class PGHelper:
             await conn.run_sync(base.metadata.create_all)
 
     async def dispose_engine(self):
+        """Закрывает связь с Postgresql"""
         await self._engine.dispose()
 
 

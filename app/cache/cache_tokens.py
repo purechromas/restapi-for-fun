@@ -1,5 +1,5 @@
 from app.exceptions.api_exceptions import TokenNotExist
-from app.infra.redis import get_redis_pool
+from app.infra.redis import redis_pool_factory
 
 
 async def set_access_token_cache(access_token: str, email: str, expire_minutes: int):
@@ -13,7 +13,7 @@ async def set_access_token_cache(access_token: str, email: str, expire_minutes: 
      """
     expire_seconds = expire_minutes * 60
 
-    async for redis in get_redis_pool():
+    async for redis in redis_pool_factory():
         await redis.set(access_token, email, expire=expire_seconds)
 
 
@@ -30,7 +30,7 @@ async def get_access_token_cache(access_token: str) -> str:
       Исключения:
       - TokenNotExist: Если кэш для указанного токена не существует.
       """
-    async for redis in get_redis_pool():
+    async for redis in redis_pool_factory():
         cached_access_token: bytes = await redis.get(access_token)
 
         if not cached_access_token:
