@@ -1,7 +1,7 @@
 from sqlalchemy.dialects.postgresql import insert
 
 from app.models.role import UserRoles, Role
-from app.settings.postgres import get_async_session
+from app.infra.postgres import get_async_session
 
 
 async def add_system_roles():

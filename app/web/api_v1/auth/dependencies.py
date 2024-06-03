@@ -2,13 +2,13 @@ import logging
 
 from fastapi import HTTPException, status
 
-from app.cache.cache_tokens import set_access_token_cache
-from app.api_v1.auth.schemas import (
+from .cache_tokens import set_access_token_cache
+from .schemas import (
     UserLoginOut,
     GetAccessTokenOut,
     UserRegistrationOut
 )
-from app.api_v1.auth.utils import (
+from .utils import (
     check_passwords_match,
     hash_password,
     check_password,
@@ -16,8 +16,8 @@ from app.api_v1.auth.utils import (
     create_refresh_token,
     decode_token,
 )
-from app.settings.config import settings
-from app.exceptions import UserNotExist, UserAlreadyExist
+from app.settings.config_app import settings
+from app.exceptions.repo_exceptions import UserNotExistError, UserExistError
 from app.models import User
 from app.models.role import UserRoles
 from app.repositories.user import create_user_if_not_exist, get_user_if_exist
@@ -43,11 +43,8 @@ async def process_registration_request(user_data: dict) -> UserRegistrationOut:
     user_data["role_name"] = UserRoles(user_data["role_name"]).name
     try:
         user: User = await create_user_if_not_exist(user_data)
-    except UserAlreadyExist:
-        # We can take IP here and make sure that from one IP we have alot of registrations.
-        log.error(
-            f"User already exist: email: {user_data['email']} password:{user_data['password']}"
-        )
+    except UserExistError:
+        log.error(f"User already exist: email: {user_data['email']}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="User with that kind of email already exists, try with another."
@@ -70,7 +67,7 @@ async def process_login_request(request_data: dict) -> UserLoginOut:
        """
     try:
         user: User = await get_user_if_exist(request_data["email"])
-    except UserNotExist:
+    except UserNotExistError:
         # We can take IP here and make sure that we don't have security attacks.
         log.error(
             f"User not exist: email: {request_data['email']} password:{request_data['password']}"
@@ -114,7 +111,7 @@ async def process_access_token_request(request_data: dict) -> GetAccessTokenOut:
 
     try:
         user: User = await get_user_if_exist(decoded_data["email"])
-    except UserNotExist:
+    except UserNotExistError:
         # We can take IP here and make sure that we don't have security attacks.
         log.error(f"UserNotExist: f{request_data['refresh_token']}")
         raise HTTPException(

@@ -1,8 +1,8 @@
-from sqlalchemy import select, insert, Row
+from sqlalchemy import select
 
-from app.exceptions import ProjectAlreadyExist
+from app.exceptions.repo_exceptions import ProjectExistError
 from app.models import Project
-from app.settings.postgres import get_async_session
+from app.infra.postgres import get_async_session
 
 
 async def create_project_if_not_exist(project_data: dict) -> Project:
@@ -15,7 +15,7 @@ async def create_project_if_not_exist(project_data: dict) -> Project:
         result = await session.execute(stmt)
 
         if result.scalar_one_or_none():
-            raise ProjectAlreadyExist
+            raise ProjectExistError
 
         project = Project(
             name=project_data["name"],

@@ -9,6 +9,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     # БЕЗ ПЕРЕМЕННЫХ ОКРУЖЕНИЯ 🔴
     APP_NAME: str = "victory_group"
+    APP_VERSION: str = "0.1.0"
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     TIME_MOSCOW_NOW: datetime = datetime.now(pytz.timezone('Europe/Moscow'))
 

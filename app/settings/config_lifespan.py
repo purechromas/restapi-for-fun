@@ -3,11 +3,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
+from app.infra.postgres import pg_helper, base_model
 from app.repositories.permission import add_tables_permissions_names
 from app.repositories.role import add_system_roles
-from app.settings.config import settings
-from app.settings.logger_setup import config_logger
-from app.settings.postgres import pg_helper, base_model
+from app.settings.config_app import settings
+from app.settings.config_logger import config_logger
 
 log = logging.getLogger(settings.APP_NAME)
 

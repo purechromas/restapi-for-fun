@@ -33,3 +33,18 @@
 2024-05-19 15:13:24,238 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
 2024-05-19 15:14:45,279 INFO lifespan: [APP STACK] PostgresDB, Redis, SQLAlchemy, Pydentic, FastAPI, Uvicorn
 2024-05-19 15:14:56,109 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$PvcLyECR5e6ZWTwfMrCMl.qdBJ2zZEpkMNzsW1gtfz29SMC.mX4Fa'
+2024-05-19 21:17:28,518 INFO lifespan: Application started and it was properly configuration
+2024-05-19 21:17:48,404 INFO lifespan: Postgres engine was disposed correctly
+2024-06-03 22:51:18,868 INFO config_lifespan: Application started and it was properly configuration
+2024-06-03 22:51:40,344 ERROR dependencies: User already exist: email: your_email@example.com password:b'$2b$12$Os/KGg1TwYj1hsbAM6t1leGDmUESJI1QuVypywPwXNCbPiLubH/9K'
+2024-06-03 22:54:55,071 INFO config_lifespan: Postgres engine was disposed correctly
+2024-06-03 22:54:56,309 INFO config_lifespan: Application started and it was properly configuration
+2024-06-03 22:56:51,907 INFO config_lifespan: Postgres engine was disposed correctly
+2024-06-03 22:56:52,979 INFO config_lifespan: Application started and it was properly configuration
+2024-06-03 22:56:56,556 ERROR dependencies: User already exist: email: your_email@example.com
+2024-06-03 22:57:52,407 ERROR dependencies: User already exist: email: your_email@example.com
+2024-06-03 22:57:53,109 ERROR dependencies: User already exist: email: your_email@example.com
+2024-06-03 22:59:14,745 INFO config_lifespan: Postgres engine was disposed correctly
+2024-06-03 22:59:44,520 INFO config_lifespan: Application started and it was properly configuration
+2024-06-03 22:59:44,923 INFO config_lifespan: Postgres engine was disposed correctly
+2024-06-03 23:01:53,349 INFO config_lifespan: Application started and it was properly configuration

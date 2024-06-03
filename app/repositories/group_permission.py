@@ -1,6 +1,6 @@
 from sqlalchemy import insert
 
-from app.api_v1.project.default_permissions import (
+from app.web.api_v1.project.default_permissions import (
     project_administrator_default_permissions,
     project_user_default_permissions,
 )
@@ -8,7 +8,7 @@ from app.models import Group, group_permission
 from app.models.group import DefaultGroups
 from app.repositories.permission import get_permissions_by_names
 
-from app.settings.postgres import get_async_session
+from app.infra.postgres import get_async_session
 
 
 async def create_default_group_permissions(groups: tuple[Group, Group]):

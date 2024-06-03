@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
-from app.exceptions import UserNotExist, UserAlreadyExist
-from app.settings.postgres import get_async_session
+from app.exceptions.repo_exceptions import UserNotExistError, UserExistError
+from app.infra.postgres import get_async_session
 from app.models import User
 
 
@@ -16,7 +16,7 @@ async def create_user_if_not_exist(user_data: dict) -> User:
         result = await session.execute(stmt)
 
         if result.scalar_one_or_none():
-            raise UserAlreadyExist
+            raise UserExistError
 
         user = User(
             email=user_data["email"],
@@ -44,6 +44,6 @@ async def get_user_if_exist(email: str) -> User:
         user = result.scalar_one_or_none()
 
         if not user:
-            raise UserNotExist
+            raise UserNotExistError
 
         return user

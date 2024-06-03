@@ -2,12 +2,12 @@ from typing import Annotated
 
 from fastapi import APIRouter, Body, status
 
-from app.api_v1.auth.dependencies import (
+from app.web.api_v1.auth.dependencies import (
     process_registration_request,
     process_login_request,
     process_access_token_request
 )
-from app.api_v1.auth.schemas import (
+from app.web.api_v1.auth.schemas import (
     UserRegistrationIn,
     UserLoginIn,
     UserLoginOut,

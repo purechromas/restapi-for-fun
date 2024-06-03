@@ -1,7 +1,7 @@
 from sqlalchemy import insert
 
 from app.models import project_user
-from app.settings.postgres import get_async_session
+from app.infra.postgres import get_async_session
 
 
 async def add_new_user_in_project(project_id: int, user_id: int):

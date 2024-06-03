@@ -2,9 +2,9 @@ from typing import Annotated
 
 from fastapi import APIRouter, Body, Depends, status
 
-from app.api_v1.api_dependencies import authentication
-from app.api_v1.project.dependencies import process_create_project_request
-from app.api_v1.project.schemas import ProjectCreateIn, ProjectCreateOut
+from app.web.api_v1.api_dependencies import authentication
+from app.web.api_v1.project.dependencies import process_create_project_request
+from app.web.api_v1.project.schemas import ProjectCreateIn, ProjectCreateOut
 from app.models import User
 
 project_routers = APIRouter(prefix="", tags=["Project, group, permission"])

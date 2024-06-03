@@ -1,5 +1,5 @@
-from app.exceptions import TokenNotExist
-from app.settings.redis import get_redis_pool
+from app.exceptions.api_exceptions import TokenNotExist
+from app.infra.redis import get_redis_pool
 
 
 async def set_access_token_cache(access_token: str, email: str, expire_minutes: int):

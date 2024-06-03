@@ -2,7 +2,7 @@ from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 
 from app.models import Permission
-from app.settings.postgres import get_async_session, base_model
+from app.infra.postgres import get_async_session, base_model
 
 
 async def add_tables_permissions_names():

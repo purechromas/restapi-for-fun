@@ -6,7 +6,7 @@ import jwt
 import bcrypt
 from fastapi import HTTPException, status
 
-from app.settings.config import settings
+from app.settings.config_app import settings
 
 
 def check_passwords_match(password: str, confirm_password: str):
